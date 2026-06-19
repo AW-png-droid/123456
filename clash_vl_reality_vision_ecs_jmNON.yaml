@@ -1,0 +1,27 @@
+proxies:
+- name: vl-reality-vision-ecs-jmNON
+  type: vless
+  server: 216.36.102.236
+  port: 27810
+  uuid: 393ba740-cf7b-4fd7-9ac7-2794d23845cf
+  network: tcp
+  tls: true
+  udp: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+
+  reality-opts:
+    public-key: E06bsx7BzUZ_rTAzcumOlAKW31EEH_GAf-OEEv7PFAs
+    short-id: beb4be35
+
+  servername: apple.com
+
+proxy-groups:
+- name: 节点选择
+  type: select
+  proxies:
+    - vl-reality-vision-ecs-jmNON
+    - DIRECT
+
+rules:
+- MATCH,节点选择
